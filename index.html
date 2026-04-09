@@ -2,67 +2,78 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>南理工 NS 课表 - 下载最新版</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>南理工 NS 课表 - 下载中心</title>
     <style>
         :root {
             --primary: #007aff;
-            --bg: #f4f4f9;
+            --bg: #f2f2f7;
             --card-bg: #ffffff;
-            --text-main: #333333;
-            --text-sub: #666666;
+            --text-main: #1c1c1e;
+            --text-sub: #8e8e93;
+            /* 品牌色 */
+            --color-direct: #ff9500;
+            --color-github: #24292e;
+            --color-gitee: #c71d23;
+            --color-baidu: #2932e1;
+            --color-pikpak: #34c759;
         }
         body {
             margin: 0; padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
             background-color: var(--bg);
             display: flex; justify-content: center; align-items: center;
             min-height: 100vh;
         }
         .container {
             background-color: var(--card-bg);
-            width: 90%; max-width: 400px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            padding: 30px 20px;
+            width: 92%; max-width: 420px;
+            border-radius: 28px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+            padding: 35px 24px;
             text-align: center;
             box-sizing: border-box;
         }
         .logo-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 18px;
-            margin-bottom: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            width: 84px; height: 84px;
+            border-radius: 20px; margin-bottom: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
             object-fit: cover;
         }
-        .title {
-            font-size: 22px; font-weight: bold; color: var(--text-main); margin: 0 0 5px 0;
-        }
-        .version {
-            font-size: 14px; color: var(--primary); font-weight: 500;
-            background: #e5f1ff; padding: 4px 10px; border-radius: 12px; display: inline-block;
-            margin-bottom: 20px;
+        .title { font-size: 24px; font-weight: 700; color: var(--text-main); margin: 0 0 6px 0; }
+        .version-tag {
+            font-size: 13px; color: var(--primary); font-weight: 600;
+            background: rgba(0, 122, 255, 0.1); padding: 5px 14px; border-radius: 20px; 
+            display: inline-block; margin-bottom: 24px;
         }
         .log-box {
-            background: #f9f9f9; border-radius: 12px; padding: 15px; text-align: left;
-            margin-bottom: 25px;
+            background: #f9f9fb; border-radius: 18px; padding: 20px; text-align: left;
+            margin-bottom: 28px; border: 1px solid #f0f0f5;
         }
-        .log-title {
-            font-size: 14px; font-weight: bold; color: var(--text-main); margin-bottom: 8px;
-        }
-        .log-list {
-            margin: 0; padding-left: 20px; font-size: 14px; color: var(--text-sub); line-height: 1.6;
-        }
+        .log-title { font-size: 15px; font-weight: 700; color: var(--text-main); margin-bottom: 12px; }
+        .log-list { margin: 0; padding-left: 18px; font-size: 14px; color: #48484a; line-height: 1.8; }
+        
+        /* 按钮组 */
+        .btn-group { display: flex; flex-direction: column; gap: 14px; }
         .download-btn {
-            display: block; width: 100%;
-            background-color: var(--primary); color: white;
-            text-decoration: none; font-size: 16px; font-weight: bold;
-            padding: 14px 0; border-radius: 12px;
-            transition: transform 0.1s, opacity 0.2s;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            width: 100%; color: white; text-decoration: none;
+            padding: 12px 0; border-radius: 16px;
+            transition: all 0.2s ease;
         }
         .download-btn:active { transform: scale(0.97); opacity: 0.9; }
-        .footer { font-size: 12px; color: #999; margin-top: 20px; }
+        .btn-main-text { font-size: 16px; font-weight: 700; display: flex; align-items: center; }
+        .btn-sub-text { font-size: 11px; opacity: 0.8; margin-top: 2px; }
+        .btn-icon { margin-right: 8px; font-size: 20px; }
+        
+        /* 品牌背景 */
+        .btn-direct { background: linear-gradient(135deg, #ffb347, #ff9500); box-shadow: 0 4px 12px rgba(255,149,0,0.2); }
+        .btn-github { background-color: var(--color-github); }
+        .btn-gitee { background-color: var(--color-gitee); }
+        .btn-baidu { background-color: var(--color-baidu); }
+        .btn-pikpak { background-color: var(--color-pikpak); }
+        
+        .footer { font-size: 12px; color: var(--text-sub); margin-top: 30px; line-height: 1.6; }
     </style>
 </head>
 <body>
@@ -70,22 +81,49 @@
 <div class="container">
     <img src="logo.png" alt="Logo" class="logo-img">
     <h1 class="title">南理工 NS 课表</h1>
-    <div class="version">最新版本 v1.1</div>
+    <div class="version-tag">v1.1</div>
 
     <div class="log-box">
         <div class="log-title">更新日志：</div>
         <ul class="log-list">
-            <li>修复了手势返回的 Bug</li>
-            <li>新增公告板功能，云端同步最新动态</li>
-            <li>修复密码输入栏没有显示/隐藏按钮的 Bug</li>
+            <li>修复了手势返回直接退出应用的 Bug</li>
+            <li>新增公告板，云端实时获取最新通知</li>
+            <li>修复密码框显示/隐藏按钮的交互逻辑</li>
         </ul>
     </div>
 
-    <a href="https://pan.baidu.com/s/1TKO1kNwXrGNWiKk14Nfo3w?pwd=592w" target="_blank" class="download-btn">
-        前往网盘下载 APK (提取码: 592w)
-    </a>
+    <div class="btn-group">
+        <a href="https://download.jiraki.top/NS.apk" class="download-btn btn-direct">
+            <span class="btn-main-text">直链下载</span>
+            
+        </a>
 
-    <div class="footer">建议在系统浏览器中打开此页面</div>
+        <a href="https://mypikpak.com/s/VOplK2bClDNISGGQ7YkJST60o2" target="_blank" class="download-btn btn-pikpak">
+            <span class="btn-main-text"> PikPak </span>
+            <span class="btn-sub-text">提取码: kx6x</span>
+        </a>
+
+        <a href="https://pan.baidu.com/s/1TKO1kNwXrGNWiKk14Nfo3w?pwd=592w" target="_blank" class="download-btn btn-baidu">
+            <span class="btn-main-text"> 百度网盘</span>
+            <span class="btn-sub-text">提取码: 592w</span>
+        </a>
+
+        <a href="https://github.com/JirakiRance/NJUST-NannoSchedule/releases/latest" target="_blank" class="download-btn btn-github">
+            <span class="btn-main-text"> GitHub </span>
+            <span class="btn-sub-text">查看源代码及历史版本</span>
+        </a>
+
+        <a href="https://gitee.com/JirakiRance/NJUST-NannoSchedule/releases" target="_blank" class="download-btn btn-gitee">
+            <span class="btn-main-text"> Gitee 镜像</span>
+            <span class="btn-sub-text">国内稳定备份渠道</span>
+        </a>
+    </div>
+
+    <div class="footer">
+        若直链无法下载，请尝试切换其他渠道<br>
+        开发不易，如果好用记得分享给身边的同学哦！<br>
+        © 2026 JirakiRance
+    </div>
 </div>
 
 </body>
