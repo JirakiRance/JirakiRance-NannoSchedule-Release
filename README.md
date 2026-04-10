@@ -1,1 +1,1 @@
-# JirakiRance-NannoSchedule-Release
+# NannoSchedule-Release
