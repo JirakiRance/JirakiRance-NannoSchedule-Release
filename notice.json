@@ -1,7 +1,7 @@
 {
   "show": true,
   "show_update_btn": false,
-  "id": "notice_20260423_01",
+  "id": "notice_20260423_02",
   "version": "v1.3.0.4",
   "date": "2026-04-23",
   "notice_content": "v1.3.0.4更新内容:\n\n修复蹭课与空教室搜索异常问题\n修改年历图片\n修复本地学期拉取与远端冲突问题\n修改通知卡片\n调整模型控制台",
